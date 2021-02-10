@@ -37,6 +37,18 @@ export default new Vuex.Store({
    }
   },
   mutations: {
+    AddBook(state,payload){
+  state.books.push(payload)
+    },
+    removeBook(state,payload){
+      //payload==id
+      const book=state.books.find(b=>b.id==payload)
+      if(book)
+      {
+        const indexof=state.books.indexOf(book)
+        state.books.splice(indexof,1)
+      }
+    }
   },
   actions: {
   },
