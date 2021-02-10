@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import {REMOVE_BOOK} from '@/store/mutation-types.js'
 export default {
     computed:{
         books()
@@ -33,7 +34,7 @@ export default {
             this.$router.push(`/BookDesc/${id}`)
         },
         deleteBook(id){
-            this.$store.commit('removeBook',id)
+            this.$store.commit(REMOVE_BOOK,id)
         }
     }
 

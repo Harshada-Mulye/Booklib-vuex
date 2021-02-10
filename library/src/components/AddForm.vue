@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import {ADD_BOOK} from '@/store/mutation-types.js'
 export default {
     data(){
         return{
@@ -26,7 +27,7 @@ export default {
                   name:this.name,
                   author:this.author
               }
-              this.$store.commit('AddBook',books)
+              this.$store.commit(ADD_BOOK,books)
         }
     }
 

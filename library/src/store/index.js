@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import {ADD_BOOK,REMOVE_BOOK} from './mutation-types.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -37,10 +37,10 @@ export default new Vuex.Store({
    }
   },
   mutations: {
-    AddBook(state,payload){
+    [ADD_BOOK](state,payload){
   state.books.push(payload)
     },
-    removeBook(state,payload){
+    [REMOVE_BOOK](state,payload){
       //payload==id
       const book=state.books.find(b=>b.id==payload)
       if(book)
